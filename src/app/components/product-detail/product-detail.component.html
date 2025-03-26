@@ -1,0 +1,18 @@
+<div class="product-detail-container" *ngIf="product">
+    <div class="product-image">
+      <img [src]="product.image" [alt]="product.title">
+    </div>
+    <div class="product-info">
+      <h1>{{ product.title }}</h1>
+      <p class="price">{{ product.price | currency }}</p>
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">{{ product.rating.rate }} ({{ product.rating.count }} reseñas)</span>
+      </div>
+      <p class="description">{{ product.description }}</p>
+      <p class="category">Categoría: {{ product.category }}</p>
+      <button class="add-to-cart" (click)="addToCart()">
+        Agregar al carrito
+      </button>
+    </div>
+  </div>
